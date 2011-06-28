@@ -1,13 +1,10 @@
-REAL_DEF(open)(const char* path, int flags, ...);
+int REAL(open)(const char* path, int flags, ...);
 INIT_START(open)
 	INIT_FUNC(open, LIBC)
 INIT_END()
 
 static int mopen(const char* path, int flags, mode_t mode) {
-	printf("open(\"%s\", %i, %i)\n", path, flags, mode);
-
 	open_init();
-
 	return real_open(path, flags, mode);
 }
 

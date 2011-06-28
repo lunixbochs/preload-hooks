@@ -18,7 +18,7 @@
 #define LIBC ((void*) -1L)
 #endif
 
-#define REAL_DEF(func) static int (*real_##func)
+#define REAL(func) static (*real_##func)
 #define INIT_START(prefix)\
 	static int prefix##_start = 0;\
 	static void prefix##_init() {\
