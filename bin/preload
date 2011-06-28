@@ -1,4 +1,4 @@
 #!/bin/bash -u
 
-BASE=$(dirname "$0")
+BASE="$(pwd)/$(dirname "$0")"
 [[ $# -gt 0 ]] && LD_PRELOAD="$BASE/preload.so" "$@"
